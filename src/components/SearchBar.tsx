@@ -16,7 +16,7 @@ const SearchBar = () => {
 
   const search = () => {
     startTransition(() => {
-      router.push(`/search?query=${query}`);
+      router.push(`/search?q=${query}`);
     });
   };
 
