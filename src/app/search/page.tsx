@@ -7,9 +7,10 @@ export const dynamic = "force-dynamic";
 const Page = async ({
   searchParams,
 }: {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams: Record<string, string | string[] | undefined>;
 }) => {
-  const query = searchParams?.q;
+  const params = searchParams as Record<string, string | string[] | undefined>;
+  const query = params.q;
 
   if (Array.isArray(query) || !query) {
     return redirect("/");
