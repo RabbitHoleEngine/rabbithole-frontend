@@ -4,8 +4,13 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-const Page = async ({ searchParams }: { searchParams: { q?: string } }) => {
-  const query = searchParams?.q;
+const Page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) => {
+  const params = await searchParams;
+  const query = params?.q;
 
   if (!query) {
     return redirect("/");
