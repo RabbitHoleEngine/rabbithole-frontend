@@ -5,9 +5,7 @@ import { defaultSearch } from "../../lib/api";
 export const dynamic = "force-dynamic";
 
 interface PageProps {
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 const Page = async ({ searchParams }: PageProps) => {
