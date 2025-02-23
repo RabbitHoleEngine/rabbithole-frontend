@@ -11,8 +11,7 @@ interface PageProps {
 }
 
 const Page = async ({ searchParams }: PageProps) => {
-  const params = await searchParams;
-  const query = params.q;
+  const query = searchParams.q;
 
   if (Array.isArray(query) || !query) {
     return redirect("/");
