@@ -4,12 +4,12 @@ import { defaultSearch } from "../../lib/api";
 
 export const dynamic = "force-dynamic";
 
-interface PageProps {
-  searchParams: Record<string, string | string[] | undefined>;
-}
-
-const Page = async ({ searchParams }: PageProps) => {
-  const query = searchParams.q;
+const Page = async ({
+  searchParams,
+}: {
+  searchParams?: Record<string, string | string[] | undefined>;
+}) => {
+  const query = searchParams?.q;
 
   if (Array.isArray(query) || !query) {
     return redirect("/");
